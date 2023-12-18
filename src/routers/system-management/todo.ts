@@ -538,6 +538,9 @@ const search = async (req: Request, res: Response) => {
     if (request.query.todo) {
       Object(where)['todo'] = new RegExp(request.query.todo, 'i');
     }
+    if (request.query.userId) {
+      Object(where)['userId'] = request.query.userId;
+    }
 
     const result = await Todo.paginate(where, query);
 
