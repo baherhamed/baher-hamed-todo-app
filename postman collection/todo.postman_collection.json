@@ -1,0 +1,169 @@
+{
+	"info": {
+		"_postman_id": "df0b648e-71b5-486a-9005-d73d6aaff274",
+		"name": "todo",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "7927817",
+		"_collection_link": "https://grey-firefly-2208.postman.co/workspace/New-Team-Workspace~0f85ef49-afa3-405b-8397-57da52343530/collection/7927817-df0b648e-71b5-486a-9005-d73d6aaff274?action=share&source=collection_link&creator=7927817"
+	},
+	"item": [
+		{
+			"name": "login to get token",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "\r\n{\r\n    \"username\":\"baher hamed abdelwahed hussein\",\r\n    \"password\":\"baher123\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/security/login"
+			},
+			"response": []
+		},
+		{
+			"name": "add New User",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"baher hamed abdelwahed hussein\",\r\n    \"branchId\":\"65805d2bb4353263334e5ccd\",\r\n    \"mobile\": \"+201001185518\",\r\n    \"email\": \"baherhamed@yahoo.com\",\r\n    \"password\": \"baher123\",\r\n    \"languageId\": \"606b64ba679e4903d47fa001\",\r\n    \"routesList\": [\r\n        \"todos\",\r\n        \"branches\"\r\n    ],\r\n    \"permissionsList\": [\r\n        \"addTodo\",\r\n        \"updateTodo\",\r\n        \"deleteTodo\",\r\n        \"addBranch\",\r\n        \"updateBranch\",\r\n        \"deleteBranch\"\r\n    ],\r\n    \"active\": true,\r\n    \"deleted\": false,\r\n    \"isAdmin\": false,\r\n    \"isDeveloper\": false\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/security/users/add"
+			},
+			"response": []
+		},
+		{
+			"name": "get all users",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "http://localhost:3000/api/security/users/getAll"
+			},
+			"response": []
+		},
+		{
+			"name": "New Request",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "en",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"userId\": \"65805e5414ca84aa1167e003\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/systemManagement/todos/getTodoByUser"
+			},
+			"response": []
+		},
+		{
+			"name": "add To to",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "en",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"userId\": \"65805e5414ca84aa1167e003\",\r\n  \"todo\": \"todo 2\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/systemManagement/todos/add"
+			},
+			"response": []
+		},
+		{
+			"name": "add branch",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "en",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\": \"sub branch\",\r\n    \"code\": 2\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:3000/api/systemManagement/branches/add"
+			},
+			"response": []
+		},
+		{
+			"name": "get all branches",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept-Language",
+						"value": "en",
+						"type": "text"
+					}
+				],
+				"url": "http://localhost:3000/api/systemManagement/branches/getAll"
+			},
+			"response": []
+		}
+	],
+	"auth": {
+		"type": "bearer",
+		"bearer": {
+			"token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOiI2NTgwNWU1NDE0Y2E4NGFhMTE2N2UwMDMiLCJuYW1lIjoiYmFoZXIgaGFtZWQgYWJkZWx3YWhlZCBodXNzZWluIiwiaXNEZXZlbG9wZXIiOmZhbHNlLCJpYXQiOjE3MDI5NjQ1ODAsImV4cCI6MTcwMzAwMDU4MH0.E6iDUqDCOV4gu_iF98Sd0G2jIq2mJi8I5Ht25w4ycL8"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
